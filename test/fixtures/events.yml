@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  age_group: MyString
+  topic: MyString
+  event_date: 2014-04-14
+
+two:
+  category: MyString
+  age_group: MyString
+  topic: MyString
+  event_date: 2014-04-14
