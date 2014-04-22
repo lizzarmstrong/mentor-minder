@@ -12,3 +12,5 @@ Mentor.create(first_name: 'Haris', last_name: 'Mahmood', email: 'fakeharis@fakee
 Mentor.create(first_name: 'Kat', last_name: 'Barrett', email: 'kathryn@girlslearningcode.com', gender: 'f')
 
 Event.create(category: 'Kids Learning Code', age_group: '9-12', topic: 'Intro to HTML & CSS', event_date: Date.parse('2014-06-06'))
+Event.create(category: 'Kids Learning Code', age_group: '13-16', topic: 'Intro to Python', event_date: Date.parse('2014-05-04'))
+Event.create(category: 'Girls Learning Code', age_group: '9-12', topic: 'Intro with Arduino', event_date: Date.parse('2014-04-27'))
