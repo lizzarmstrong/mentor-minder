@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Mentor.create(first_name: 'Lizz', last_name: 'Armstrong', email: 'lizzarmstrong@gmail.com', gender: 'f')
+Mentor.create(first_name: 'Haris', last_name: 'Mahmood', email: 'fakeharis@fakeemail.com', gender: 'm')
+Mentor.create(first_name: 'Kat', last_name: 'Barrett', email: 'kathryn@girlslearningcode.com', gender: 'f')
