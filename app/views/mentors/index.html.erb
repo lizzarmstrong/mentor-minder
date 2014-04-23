@@ -1,9 +1,10 @@
 <h1>Listing mentors</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>First Name</th>
+      <th>Last Name</th>
       <th>Email</th>
       <th>Gender</th>
       <th></th>
@@ -15,7 +16,8 @@
   <tbody>
     <% @mentors.each do |mentor| %>
       <tr>
-        <td><%= mentor.name %></td>
+        <td><%= mentor.first_name %></td>
+        <td><%= mentor.last_name %></td>
         <td><%= mentor.email %></td>
         <td><%= mentor.gender %></td>
         <td><%= link_to 'Show', mentor %></td>
