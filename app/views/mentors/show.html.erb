@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @mentor.name %>
+  <strong>First Name:</strong>
+  <%= @mentor.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @mentor.last_name %>
 </p>
 
 <p>
@@ -17,3 +22,26 @@
 
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
+
+<br><br>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Topic</th>
+			<th>Category</th>
+			<th>Age Group</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @mentor.events.each do |event| %>
+			<tr>
+				<td><%= event.topic %></td>
+				<td><%= event.category %></td>
+				<td><%= event.age_group %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+
+</p>
