@@ -10,11 +10,10 @@
 
 <div class="container">
 
-	<ul class="nav nav-pills nav-justified">
-	  <li class="active"><a href="#">Home</a></li>
-	  <li><a href="#">Mentors</a></li>
-	  <li><a href="#">Events</a></li>
-	</ul>
+	<%= render 'layouts/nav' %>
+
+	<% if notice %><p class="notice"><%= notice %></p><% end %>
+	<% if alert %><p class="alert"><%= alert %></p><% end %>
 
 	<%= yield %>
 </div>

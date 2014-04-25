@@ -1,4 +1,5 @@
 Mentorminder::Application.routes.draw do
+  devise_for :users
   resources :events
 
   resources :mentors
