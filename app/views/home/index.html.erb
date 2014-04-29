@@ -1,1 +1,23 @@
-index page!
+<table class="table">
+	<tr>
+		<td># Mentors: <%= Mentor.count %></td>
+		<td>Last event: <%= Event.last.topic %></td>
+		<td># Events: <%= Event.count %></td>
+	</tr>
+	<tr>
+		<td>
+			
+		</td>
+		<td>
+			# Female mentors: <%= Mentor.gendered('f').count %>
+			<br>
+			# Male mentors: <%= Mentor.gendered('m').count %>
+		</td>
+		<td>
+			Next 2 upcoming event:
+			<% Event.upcoming.order('event_date').limit(2).each do |event| %>
+			<li><%= event.topic %> <%= event.event_date %></li>
+			<% end %>
+		</td>
+	</tr>
+</table>
