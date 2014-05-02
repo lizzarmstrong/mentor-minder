@@ -6,7 +6,9 @@
 	</tr>
 	<tr>
 		<td>
-			
+			<% @mentors.order('events_count').reverse_order.limit(2).each do |mentor| %>
+				<li><%= mentor.first_name %><%= mentor.events.size %></li>
+			<% end %>
 		</td>
 		<td>
 			# Female mentors: <%= Mentor.gendered('f').count %>
