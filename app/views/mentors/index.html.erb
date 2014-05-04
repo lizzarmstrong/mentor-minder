@@ -5,8 +5,9 @@
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Email</th>
       <th>Gender</th>
+      <th>Email</th>
+      <th>First Aid Certified?</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,10 +17,11 @@
   <tbody>
     <% @mentors.each do |mentor| %>
       <tr>
-        <td><%= mentor.first_name %></td>
-        <td><%= mentor.last_name %></td>
-        <td><%= mentor.email %></td>
+        <td><%= link_to mentor.first_name, mentor %></td>
+        <td><%= link_to mentor.last_name, mentor %></td>
         <td><%= mentor.gender %></td>
+        <td><%= mentor.email %></td>
+        <td><%= mentor.first_aid_certified %></td>
         <td><%= link_to 'Show', mentor %></td>
         <td><%= link_to 'Edit', edit_mentor_path(mentor) %></td>
         <td><%= link_to 'Destroy', mentor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
