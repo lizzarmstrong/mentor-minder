@@ -4,6 +4,15 @@ Mentorminder::Application.routes.draw do
 
   resources :mentors
 
+  resources :mentor_regs
+
+  # resources :mentor_regs do
+  #   member do
+  #     post 'process'
+  #   end
+  # end
+  # link_to process_mentor_reg_path(mentor_reg), method: :post
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

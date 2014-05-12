@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504192853) do
+ActiveRecord::Schema.define(version: 20140509010859) do
 
   create_table "events", force: true do |t|
     t.string   "category"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20140504192853) do
     t.date     "event_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "mentor_regs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
   end
 
   create_table "mentors", force: true do |t|
@@ -46,14 +54,13 @@ ActiveRecord::Schema.define(version: 20140504192853) do
   end
 
   create_table "sign_ups", force: true do |t|
-    t.integer  "mentor_id"
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "mentor_id"
   end
 
   add_index "sign_ups", ["event_id"], name: "index_sign_ups_on_event_id"
-  add_index "sign_ups", ["mentor_id"], name: "index_sign_ups_on_mentor_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
