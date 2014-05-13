@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20140512235840) do
   end
 
   add_index "sign_ups", ["event_id"], name: "index_sign_ups_on_event_id"
-  add_index "sign_ups", ["mentor_id"], name: "index_sign_ups_on_mentor_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
