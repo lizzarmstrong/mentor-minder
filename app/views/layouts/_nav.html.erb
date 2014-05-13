@@ -1,14 +1,10 @@
-<nav class="navbar navbar-default" role="navigation">
-	<div class="navbar-header">
-		<img class="pull-left" src="/assets/llc.png">
-	</div>
-
 	<% if user_signed_in? %>
-		<ul class="nav nav-pills nav-justified pull-right customNav">
-		 	<li><a href="/">Home</a></li>
-			<li><a href="/mentors">Mentors</a></li>
-			<li><a href="/events">Events</a></li>
-			<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+		<ul class="nav nav-pills nav-justified customNav">
+		 	<li><a href="/"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+			<li><a href="/mentors"><span class="glyphicon glyphicon-user"></span> Mentors </a></li>
+			<li><a href="/events"><span class="glyphicon glyphicon-calendar"></span> Events </a></li>
+			<li><a href="/registrations"><span class="glyphicon glyphicon-refresh"></span> Pending Apps </a></li>
+			<li><%= link_to  "Sign Out", destroy_user_session_path, method: :delete %></li>
 		</ul>
 	<% end %>
 
@@ -16,4 +12,3 @@
 	<br> 
 	<br>
 	<br>
-</nav>
