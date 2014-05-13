@@ -1,27 +1,36 @@
-<h1>Home</h1>
+<h1>Welcome to your dashboard</h1>
+<br>
 
-<table class="table homeTable">
-	<tr>
-		<td># Mentors: <%= Mentor.count %></td>
-		<td>Last event: <%= Event.last.topic %></td>
-		<td># Events: <%= Event.count %></td>
-	</tr>
-	<tr>
-		<td>
-			<% @mentors.order('events_count').reverse_order.limit(2).each do |mentor| %>
-				<li><%= mentor.first_name %><%= mentor.events.size %></li>
-			<% end %>
-		</td>
-		<td>
-			# Female mentors: <%= Mentor.gendered('f').count %>
-			<br>
-			# Male mentors: <%= Mentor.gendered('m').count %>
-		</td>
-		<td>
-			Next 2 upcoming event:
-			<% Event.upcoming.order('event_date').limit(2).each do |event| %>
+
+  <div class="col-md-4">
+  	<div class="dashboardBox">
+  		Number of Mentors: <%= Mentor.count %>
+  		<br>
+  		Number of Events: <%= Event.count %>
+  		<br>
+		Last event: <%= Event.last.topic %>
+		<br>
+		<br>
+		Upcoming Events:
+		<% Event.upcoming.order('event_date').limit(2).each do |event| %>
 			<li><%= event.topic %> <%= event.event_date %></li>
-			<% end %>
-		</td>
-	</tr>
-</table>
+		<% end %>
+	</div>
+  </div>
+  
+  <div class="col-md-4">
+  	<div class="dashboardBox">
+  		Top mentors
+	<% @mentors.order('events_count').reverse_order.limit(2).each do |mentor| %>
+		<li><%= mentor.first_name %><%= mentor.events.size %></li>
+	<% end %>
+	</div>
+  </div>
+
+  <div class="col-md-4">
+  	<div class="dashboardBox">
+  	# Female mentors: <%= Mentor.gendered('f').count %>
+		<br>
+	# Male mentors: <%= Mentor.gendered('m').count %>
+</div>
+  </div>
