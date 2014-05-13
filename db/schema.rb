@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509010859) do
+ActiveRecord::Schema.define(version: 20140512235840) do
 
   create_table "events", force: true do |t|
     t.string   "category"
@@ -57,7 +57,8 @@ ActiveRecord::Schema.define(version: 20140509010859) do
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "mentor_id"
+    t.integer  "signupable_id"
+    t.string   "signupable_type"
   end
 
   add_index "sign_ups", ["event_id"], name: "index_sign_ups_on_event_id"

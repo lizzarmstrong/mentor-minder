@@ -1,0 +1,27 @@
+<h1>Pending Applications</h1>
+
+<br>
+
+<table class="table homeTable">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mentor_regs.each do |reg| %>
+      <tr>
+        <td><%= reg.first_name %></td>
+        <td><%= reg.last_name %></td>
+        <td><%= reg.email %></td>
+        <td><%= link_to "Process", mentor_reg_path(reg), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
