@@ -5,4 +5,5 @@ class Mentor < ActiveRecord::Base
 	def self.gendered (x)
 		where(gender: x)
 	end
+
 end

@@ -4,9 +4,7 @@ class MentorRegsController < ApplicationController
 	end	
 
 	def process_reg
-		reg = MentorReg.find(params[:id])
-		mentor = Mentor.where(email: reg.email).first_or_initialize(first_name: reg.first_name, last_name: reg.last_name)
-		if mentor.save
+		if RegConverter.process_reg(params[:id])
 			flash[:notice] = "Success!"
 		else
 			flash[:notice] = "Save failed!"
@@ -14,5 +12,7 @@ class MentorRegsController < ApplicationController
 
 		redirect_to mentor_regs_path
 	end
+
+
 
 end
