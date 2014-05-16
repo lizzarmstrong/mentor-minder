@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512235840) do
+ActiveRecord::Schema.define(version: 20140513150126) do
 
   create_table "events", force: true do |t|
     t.string   "category"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140512235840) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.boolean  "pending",    default: true
   end
 
   create_table "mentors", force: true do |t|
