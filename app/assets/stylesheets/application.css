@@ -16,6 +16,7 @@
 html {
 	/*background: transparent url(/assets/background.jpg) no-repeat center center fixed;*/
 	/*background-size: cover;*/
+	/*background: transparent url(/assets/background.png) center center fixed;*/
 	background-color: #333;
 }
 
@@ -32,34 +33,122 @@ body {
 	background-color: #DDD;
 }
 
+.customForm {
+	background-color: Thistle;
+	padding: 40px;
+	border-radius: 10px;
+}
+
+.welcome {
+	font-size: 30px;
+	background: transparent url(/assets/background.jpg);
+	background-size: cover;
+	border-radius: 10px;
+	height: 503px;
+}
+
+.customLogo {
+	margin: 20px;
+	width: 100px;
+}
+
 .homeTable {
-	background-color: rgba(255,255,255,0.5);
+	/*background-color: rgba(255,255,255,0.5);*/
+	background-color: rgb(102,205,170);
 	padding: 40px !important;
 }
 
 th, td {
     padding: 20px !important;
+    border-top: 3px solid #FFF !important;
 }
 
 .container {
-	background-color: Thistle;
+	background-color: #FFF;
 	width: 100% !important;
-	padding: 60px !important;
+	padding: 30px !important;
 }
 
-.col-md-4 {
+.col-md-4 .col-md-8 {
 	padding: 0 !important;
 	margin: 0 !important;
 }
 
 .dashboardBox {
-	background-color: rgba(255,255,255,0.5);
-	margin-right: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 	padding: 40px;
+	text-align: center;
+	color: #FFF;
+	text-transform: uppercase;
+	border-radius: 10px;
+}
+
+
+.dashboardTitle {
+	font-size: 24px;
+	font-weight: bold;  
+}
+
+.dashboardCount {
+	font-size: 80px;
+	font-weight: bold;
+}
+
+.dashboardBox li {
+	font-size: 20px;
+	list-style: none;
+}
+
+img {
+	margin-right: 10px !important;
+}
+
+.monitor {
+	background: url(monitor.png) no-repeat center;
+	height: 344px;
 }
 
 .glyphicon {
 	margin-right: 15px !important;
+}
+
+.turquoise {
+	background-color: #48D1CC;
+}
+
+.rosybrown {
+	background-color: #BC8F8F;
+}
+
+.peachpuff { 
+	background-color: #FFDAB9;
+}
+
+.steelblue { 
+	background-color: #4682B4;
+}
+
+.plum { 
+	background-color: #DDA0DD;
+}
+
+.mediumseagreen { 
+	background-color: #3CB371;
+}
+
+.lightsalmon { 
+	background-color: #FFA07A;
+}
+
+.lightslategray { 
+	background-color: #778899;
+}
+
+.lightcoral { 
+	background-color: #F08080;
+}
+
+.darkgray {
+	background-color: #A9A9A9
 }
 

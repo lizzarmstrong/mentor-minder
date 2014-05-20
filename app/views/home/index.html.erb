@@ -1,36 +1,76 @@
-<h1>Welcome to your dashboard</h1>
-<br>
-
+<div class="row">
 
   <div class="col-md-4">
-  	<div class="dashboardBox">
-  		Number of Mentors: <%= Mentor.count %>
-  		<br>
-  		Number of Events: <%= Event.count %>
-  		<br>
-		Last event: <%= Event.last.topic %>
-		<br>
-		<br>
-		Upcoming Events:
-		<% Event.upcoming.order('event_date').limit(2).each do |event| %>
-			<li><%= event.topic %> <%= event.event_date %></li>
-		<% end %>
-	</div>
-  </div>
-  
-  <div class="col-md-4">
-  	<div class="dashboardBox">
-  		Top mentors
-	<% @mentors.order('events_count').reverse_order.limit(2).each do |mentor| %>
-		<li><%= mentor.first_name %><%= mentor.events.size %></li>
-	<% end %>
-	</div>
+    <div class="dashboardBox lightcoral">
+      <h1> Hello, Kat! </h1>
+    </div>
+
+    <div class="dashboardBox turquoise">
+      <p class="dashboardTitle">Last event:</p>
+      <li><img src="assets/calendar.png"><%= Event.last.topic %></li>
+    </div>
   </div>
 
   <div class="col-md-4">
-  	<div class="dashboardBox">
-  	# Female mentors: <%= Mentor.gendered('f').count %>
-		<br>
-	# Male mentors: <%= Mentor.gendered('m').count %>
+    <div class="dashboardBox monitor rosybrown">
+      <br>
+      <br>
+      <p class="dashboardTitle"> Upcoming:</p>
+      <% Event.upcoming.order('event_date').limit(2).each do |event| %>
+      <li><%= event.topic %></li>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="dashboardBox peachpuff">
+      <a href="https://bufferapp.com/"><img src="assets/buffer.png"></a><a href="https://twitter.com/llcodedotcom"><img src="assets/twitter.png"></a><a href="https://www.facebook.com/ladieslearningcode"><img src="assets/facebook.png"></a>
+    </div>
+
+    <div class="dashboardBox darkgray">
+      <a href="https://basecamp.com/"><img src="assets/basecamp.png"></a><a href="http://learninglabs.org/wp-admin/"><img src="assets/wordpress.png"></a><a href="http://mailchimp.com/"><img src="assets/mailchimp.png"></a><a href="https://www.eventbrite.ca/"><img src="assets/eventbrite.png"></a>
+      <br>
+      <br>
+    </div>
+  </div>
 </div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="dashboardBox plum">
+      <p class="dashboardTitle">Approved Mentors:</p> 
+      <p class="dashboardCount"><%= Mentor.count %></p>
+    </div>
+
+    <div class="dashboardBox lightslategray">
+      <p class="dashboardTitle">Female Mentors:</p> 
+       <p class="dashboardCount"><img src="assets/female.png"><%= Mentor.gendered('f').count %></p>
+    </div>
   </div>
+
+  <div class="col-md-4">
+    <div class="dashboardBox mediumseagreen">
+      <p class="dashboardTitle">Pending Mentors:</p>
+      <p class="dashboardCount"><%= MentorReg.count %></p>
+    </div>
+
+    <div class="dashboardBox lightsalmon">
+      <p class="dashboardTitle">Male Mentors:</p> 
+      <p class="dashboardCount"><img src="assets/male.png"><%= Mentor.gendered('m').count %></p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="dashboardBox steelblue">
+      <img src="assets/trophy.png">
+      <br>
+      <br>
+      <p class="dashboardTitle">Top Mentors:</p>
+      <% @mentors.order('events_count').reverse_order.limit(5).each do |mentor| %>
+      <li><%= mentor.first_name %>: <%= mentor.events.size %> Events</li>
+      <% end %>
+      <br>
+    </div>
+  </div>
+</div>
+
