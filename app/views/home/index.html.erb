@@ -7,7 +7,12 @@
 
     <div class="dashboardBox turquoise">
       <p class="dashboardTitle">Last event:</p>
-      <li><img src="assets/calendar.png"><%= Event.last.topic %></li>
+      <li>
+        <img src="assets/calendar.png">
+        <% Event.most_recent.order('event_date DESC').limit(1).each do |event| %>
+          <%= link_to event.topic, event %>
+        <% end %>
+      </li>
     </div>
   </div>
 
@@ -16,8 +21,8 @@
       <br>
       <br>
       <p class="dashboardTitle"> Upcoming:</p>
-      <% Event.upcoming.order('event_date').limit(2).each do |event| %>
-      <li><%= event.topic %></li>
+      <% Event.upcoming.order('event_date').limit(3).each do |event| %>
+      <li><%= link_to event.topic, event %></li>
       <% end %>
     </div>
   </div>
