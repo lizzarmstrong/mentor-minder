@@ -15,12 +15,12 @@
   </thead>
 
   <tbody>
-    <% @mentor_regs.each do |reg| %>
+    <% @mentor_regs.pending?.each do |reg| %>
       <tr>
         <td><%= reg.first_name %></td>
         <td><%= reg.last_name %></td>
         <td><%= reg.email %></td>
-        <td><%= link_to "Process", mentor_reg_path(reg), method: :post %></td>
+        <td><%= link_to "Process", process_reg_mentor_reg_path(reg), method: :post %></td>
       </tr>
     <% end %>
   </tbody>

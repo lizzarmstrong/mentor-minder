@@ -4,8 +4,13 @@ Mentorminder::Application.routes.draw do
 
   resources :mentors
 
-  resources :mentor_regs
-  post 'mentor_regs/:id', to: 'mentor_regs#process_reg' 
+  resources :mentor_regs do
+    member do
+      post :process_reg
+    end
+  end
+
+  #post 'mentor_regs/:id', to: 'mentor_regs#process_reg' 
 
   # resources :mentor_regs do
   #   member do
