@@ -2,7 +2,7 @@
 
   <div class="col-md-4">
     <div class="dashboardBox lightcoral">
-      <h1> Hello, Kat! </h1>
+      <h1> Hello, <%= current_user.username %>! </h1>
     </div>
 
     <div class="dashboardBox turquoise">
@@ -44,7 +44,7 @@
   <div class="col-md-4">
     <div class="dashboardBox plum">
       <p class="dashboardTitle">Approved Mentors:</p> 
-      <p class="dashboardCount"><%= Mentor.count %></p>
+      <p class="dashboardCount"><%= link_to Mentor.count, mentors_path %></p>
     </div>
 
     <div class="dashboardBox lightslategray">
@@ -56,7 +56,7 @@
   <div class="col-md-4">
     <div class="dashboardBox mediumseagreen">
       <p class="dashboardTitle">Pending Mentors:</p>
-      <p class="dashboardCount"><%= MentorReg.count %></p>
+      <p class="dashboardCount"><%= link_to MentorReg.pending?.count, mentor_regs_path %></p>
     </div>
 
     <div class="dashboardBox lightsalmon">
@@ -72,7 +72,7 @@
       <br>
       <p class="dashboardTitle">Top Mentors:</p>
       <% @mentors.order('events_count').reverse_order.limit(5).each do |mentor| %>
-      <li><%= mentor.first_name %>: <%= mentor.events.size %> Events</li>
+      <li><%= link_to mentor.first_name, mentor %>: <%= mentor.events.size %> Events</li>
       <% end %>
       <br>
     </div>
