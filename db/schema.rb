@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513150126) do
+ActiveRecord::Schema.define(version: 20140521001410) do
 
   create_table "events", force: true do |t|
     t.string   "category"
@@ -28,7 +28,21 @@ ActiveRecord::Schema.define(version: 20140513150126) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.boolean  "pending",    default: true
+    t.boolean  "pending",                          default: true
+    t.string   "gender"
+    t.boolean  "first_aid_certified",              default: false
+    t.string   "phone"
+    t.string   "city"
+    t.string   "website"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "work"
+    t.string   "job"
+    t.text     "bio"
+    t.text     "why_involved"
+    t.string   "emergency_contact"
+    t.text     "references"
+    t.boolean  "permission_to_contact_references"
   end
 
   create_table "mentors", force: true do |t|
