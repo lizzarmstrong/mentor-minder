@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140521001410) do
 
-
   create_table "events", force: true do |t|
     t.string   "category"
     t.string   "age_group"
