@@ -81,9 +81,9 @@
   </div>
   <div>
   <% Event.upcoming.each do |event| %>
-  <%= check_box_tag 'event_ids[]', event.id %>
-  <%= event.topic %><br>
-<% end %>
+    <%= check_box_tag 'event_ids[]', event.id %>
+    <%= event.topic %><br>
+  <% end %>
 </div>
   <div class="actions">
     <%= f.submit %>
