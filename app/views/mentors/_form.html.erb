@@ -79,6 +79,12 @@
     <%= f.label :permission_to_contact_references %>
     <%= f.check_box :permission_to_contact_references %>
   </div>
+  <div>
+  <% Event.upcoming.each do |event| %>
+  <%= check_box_tag 'event_ids[]', event.id %>
+  <%= event.topic %><br>
+<% end %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>

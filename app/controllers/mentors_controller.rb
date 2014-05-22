@@ -19,6 +19,7 @@ class MentorsController < ApplicationController
 
   # GET /mentors/1/edit
   def edit
+
   end
 
   # POST /mentors
@@ -40,6 +41,12 @@ class MentorsController < ApplicationController
   # PATCH/PUT /mentors/1
   # PATCH/PUT /mentors/1.json
   def update
+    flash[:test] = params[:event_ids]
+    events = params[:event_ids]
+    events.each do |event|
+      SignUp.create(event_id: event, signupable_id: params[:id], signupable_type: "Mentor")
+    end
+
     respond_to do |format|
       if @mentor.update(mentor_params)
         format.html { redirect_to @mentor, notice: 'Mentor was successfully updated.' }
