@@ -1,3 +1,9 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :first_name_or_last_name_or_email_cont %>
+  <%= f.search_field :first_name_or_last_name_or_email_cont %>
+  <%= f.submit %>
+<% end %>
+
 <button type="button" class="btn btn-default pull-right"><%= link_to 'New Mentor', new_mentor_path %></button>
 
 <h1>Mentors</h1>
@@ -7,14 +13,11 @@
 <table class="table homeTable">
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Gender</th>
-      <th>Email</th>
-      <th>First Aid Certified?</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= sort_link @q, :first_name, "First Name" %></th>
+      <th><%= sort_link @q, :last_name, "Last Name" %></th>
+      <th><%= sort_link @q, :gender, "Gender" %></th>
+      <th><%= sort_link @q, :email, "Email" %></th>
+      <th><%= sort_link @q, :first_aid_certified, "First Aid Certified?" %></th>
     </tr>
   </thead>
 

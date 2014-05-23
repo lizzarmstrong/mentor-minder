@@ -4,7 +4,8 @@ class MentorsController < ApplicationController
   # GET /mentors
   # GET /mentors.json
   def index
-    @mentors = Mentor.all
+    @q = Mentor.search(params[:q])
+    @mentors = @q.result(distinct: true)
   end
 
   # GET /mentors/1
@@ -20,6 +21,7 @@ class MentorsController < ApplicationController
   # GET /mentors/1/edit
   def edit
   end
+
 
   # POST /mentors
   # POST /mentors.json

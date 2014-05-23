@@ -1,3 +1,9 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :topic_cont %>
+  <%= f.search_field :topic_cont %>
+  <%= f.submit %>
+<% end %>
+
 <button type="button" class="btn btn-default pull-right"><%= link_to 'New Event', new_event_path %></button>
 
 <h1>Events</h1>
@@ -7,13 +13,10 @@
 <table class="table homeTable">
   <thead>
     <tr>
-      <th>Category</th>
-      <th>Age group</th>
-      <th>Topic</th>
-      <th>Event date</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= sort_link @q, :category, "Category" %></th>
+      <th><%= sort_link @q, :age_group, "Age Group" %></th>
+      <th><%= sort_link @q, :topic, "Topic" %></th>
+      <th><%= sort_link @q, :event_date, "Event Date" %></th>
     </tr>
   </thead>
 
