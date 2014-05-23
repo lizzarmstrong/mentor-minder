@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.select :category, [["Girls Learning Code", 1], ["Kids Learning Code", 0]] %>
+    <%= f.select :category, ([["Select One", ""], "Girls Learning Code", "Kids Learning Code"]), :class => 'genForm_dropBox' %>
   </div>
   <div class="field">
     <%= f.label :age_group %><br>
-    <%= f.text_field :age_group %>
+    <%= f.select :age_group, ([["Select One", ""], "6-8", "9-12", "13-16"]), :class => 'genForm_dropBox' %>
   </div>
   <div class="field">
     <%= f.label :topic %><br>

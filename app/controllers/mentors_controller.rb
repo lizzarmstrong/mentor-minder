@@ -19,7 +19,6 @@ class MentorsController < ApplicationController
 
   # GET /mentors/1/edit
   def edit
-
   end
 
   # POST /mentors
