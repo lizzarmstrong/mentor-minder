@@ -8,6 +8,9 @@ Mentorminder::Application.routes.draw do
     member do
       post :process_reg
     end
+    collection do
+      get :thanks
+    end
   end
 
   #post 'mentor_regs/:id', to: 'mentor_regs#process_reg' 
