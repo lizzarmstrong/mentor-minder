@@ -1,4 +1,4 @@
-<h1>Mentors <button type="button" class="btn btn-success"><%= link_to 'Add New', new_mentor_path %></button></h1>
+<h1>Mentors <button type="button" class="btn btn-success addNew"><%= link_to 'Add New', new_mentor_path %></button></h1>
 
 <form class="form-inline" role="form">
   <div class="form-group pull-right">
@@ -41,4 +41,5 @@
   </tbody>
 </table>
 
-<br>
+<%= will_paginate @mentors %>
+
