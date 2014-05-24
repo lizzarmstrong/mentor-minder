@@ -1,24 +1,24 @@
-<%= search_form_for @q do |f| %>
-  <%= f.label :first_name_or_last_name_or_email_cont %>
-  <%= f.search_field :first_name_or_last_name_or_email_cont %>
-  <%= f.submit %>
-<% end %>
+<h1>Mentors <button type="button" class="btn btn-success"><%= link_to 'Add New', new_mentor_path %></button></h1>
 
-<button type="button" class="btn btn-default pull-right"><%= link_to 'New Mentor', new_mentor_path %></button>
+<form class="form-inline" role="form">
+  <div class="form-group pull-right">
+    <%= search_form_for @q do |f| %>
+      <%= f.search_field :first_name_or_last_name_or_email_cont, :placeholder => "First Name, Last Name, Email", class: "form-control search" %>
+      <%= f.submit class: "btn btn-default" %>
+    <% end %>
+  </div>
+</form>
 
-<h1>Mentors</h1>
-
+<br>
 <br>
 
 <table class="table homeTable">
   <thead>
-    <tr>
       <th><%= sort_link @q, :first_name, "First Name" %></th>
       <th><%= sort_link @q, :last_name, "Last Name" %></th>
       <th><%= sort_link @q, :gender, "Gender" %></th>
       <th><%= sort_link @q, :email, "Email" %></th>
       <th><%= sort_link @q, :first_aid_certified, "First Aid Certified?" %></th>
-    </tr>
   </thead>
 
   <tbody>
@@ -29,9 +29,13 @@
         <td><%= mentor.gender %></td>
         <td><%= mentor.email %></td>
         <td><%= mentor.first_aid_certified %></td>
-        <td><%= link_to 'Show', mentor %></td>
-        <td><%= link_to 'Edit', edit_mentor_path(mentor) %></td>
-        <td><%= link_to 'Destroy', mentor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><button type="button" class="btn btn-info pull-right">
+<%= link_to 'Profile', mentor %></button></td>
+        <td><button type="button" class="btn btn-warning pull-right">
+<%= link_to 'Edit', edit_mentor_path(mentor) %></button></td>
+        <td><button type="button" class="btn btn-danger pull-right">
+<%= link_to 'Delete', mentor, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,12 +1,12 @@
 <div class="row">
 
   <div class="col-md-4">
-    <div class="dashboardBox lightcoral">
-      <h1> Hello, Kat! </h1>
+    <div class="dashboardBox">
+      <h1> <strong> Hello, Kat! </strong> </h1>
     </div>
 
-    <div class="dashboardBox turquoise">
-      <p class="dashboardTitle">Last event:</p>
+    <div class="dashboardBox">
+      <p class="dashboardTitle green">Last event:</p>
       <li>
         <img src="assets/calendar.png">
         <% Event.most_recent.order('event_date DESC').limit(1).each do |event| %>
@@ -17,10 +17,10 @@
   </div>
 
   <div class="col-md-4">
-    <div class="dashboardBox monitor rosybrown">
+    <div class="dashboardBox monitor">
       <br>
       <br>
-      <p class="dashboardTitle"> Upcoming:</p>
+      <p class="dashboardTitle orange"> Upcoming:</p>
       <% Event.upcoming.order('event_date').limit(3).each do |event| %>
       <li><%= link_to event.topic, event %></li>
       <% end %>
@@ -28,12 +28,12 @@
   </div>
 
   <div class="col-md-4">
-    <div class="dashboardBox peachpuff">
-      <a href="https://bufferapp.com/"><img src="assets/buffer.png"></a><a href="https://twitter.com/llcodedotcom"><img src="assets/twitter.png"></a><a href="https://www.facebook.com/ladieslearningcode"><img src="assets/facebook.png"></a>
+    <div class="dashboardBox">
+      <a href="https://bufferapp.com/"><img class="dashboardImage" src="assets/buffer.png"></a><a href="https://twitter.com/llcodedotcom"><img class="dashboardImage" src="assets/twitter.png"></a><a href="https://www.facebook.com/ladieslearningcode"><img class="dashboardImage" src="assets/facebook.png"></a>
     </div>
 
-    <div class="dashboardBox darkgray">
-      <a href="https://basecamp.com/"><img src="assets/basecamp.png"></a><a href="http://learninglabs.org/wp-admin/"><img src="assets/wordpress.png"></a><a href="http://mailchimp.com/"><img src="assets/mailchimp.png"></a><a href="https://www.eventbrite.ca/"><img src="assets/eventbrite.png"></a>
+    <div class="dashboardBox">
+      <a href="https://basecamp.com/"><img class="dashboardImage" src="assets/basecamp.png"></a><a href="http://learninglabs.org/wp-admin/"><img class="dashboardImage" src="assets/wordpress.png"></a><a href="http://mailchimp.com/"><img class="dashboardImage" src="assets/mailchimp.png"></a><a href="https://www.eventbrite.ca/"><img class="dashboardImage" src="assets/eventbrite.png"></a>
       <br>
       <br>
     </div>
@@ -42,35 +42,36 @@
 
 <div class="row">
   <div class="col-md-4">
-    <div class="dashboardBox plum">
-      <p class="dashboardTitle">Approved Mentors:</p> 
+    <div class="dashboardBox">
+      <p class="dashboardTitle blue">Approved Mentors:</p> 
       <p class="dashboardCount"><%= link_to Mentor.count, mentors_path %></p>
     </div>
 
-    <div class="dashboardBox lightslategray">
-      <p class="dashboardTitle">Female Mentors:</p> 
-       <p class="dashboardCount"><img src="assets/female.png"><%= Mentor.gendered('f').count %></p>
+    <div class="dashboardBox">
+      <p class="dashboardTitle pink">Female Mentors:</p> 
+       <p class="dashboardCount"><img src="assets/female.png"><%= Mentor.gendered('Female').count %></p>
     </div>
   </div>
 
   <div class="col-md-4">
-    <div class="dashboardBox mediumseagreen">
-      <p class="dashboardTitle">Pending Mentors:</p>
+    <div class="dashboardBox">
+      <p class="dashboardTitle red">Pending Mentors:</p>
       <p class="dashboardCount"><%= link_to MentorReg.pending?.count, mentor_regs_path %></p>
     </div>
 
-    <div class="dashboardBox lightsalmon">
-      <p class="dashboardTitle">Male Mentors:</p> 
-      <p class="dashboardCount"><img src="assets/male.png"><%= Mentor.gendered('m').count %></p>
+    <div class="dashboardBox">
+      <p class="dashboardTitle lightBlue">Male Mentors:</p> 
+      <p class="dashboardCount"><img src="assets/male.png"><%= Mentor.gendered('Male').count %></p>
     </div>
   </div>
 
   <div class="col-md-4">
-    <div class="dashboardBox steelblue">
+    <div class="dashboardBox">
+      <p class="dashboardTitle gold">Top Mentors:</p>
+      <br>
       <img src="assets/trophy.png">
       <br>
       <br>
-      <p class="dashboardTitle">Top Mentors:</p>
       <% @mentors.order('events_count').reverse_order.limit(5).each do |mentor| %>
       <li><%= link_to mentor.first_name, mentor %>: <%= mentor.events.size %> Events</li>
       <% end %>
