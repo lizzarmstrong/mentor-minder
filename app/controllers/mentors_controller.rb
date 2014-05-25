@@ -5,8 +5,7 @@ class MentorsController < ApplicationController
   # GET /mentors.json
   def index
     @q = Mentor.search(params[:q])
-    @mentors = @q.result(distinct: true)
-    @mentors = Mentor.all.paginate(page: params[:page], per_page:5)
+    @mentors = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /mentors/1

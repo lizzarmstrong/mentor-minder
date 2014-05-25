@@ -3,7 +3,7 @@
 <form class="form-inline" role="form">
   <div class="form-group pull-right">
     <%= search_form_for @q do |f| %>
-      <%= f.search_field :first_name_or_last_name_or_email_cont, :placeholder => "First Name, Last Name, Email", class: "form-control search" %>
+      <%= f.search_field :first_name_or_last_name_or_email_cont, :placeholder => "First Name/Last Name/Email", class: "form-control search" %>
       <%= f.submit class: "btn btn-default" %>
     <% end %>
   </div>
