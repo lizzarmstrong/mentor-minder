@@ -1,8 +1,17 @@
 Mentorminder::Application.routes.draw do
   devise_for :users
-  resources :events
+  
+  resources :events do
+    collection do
+      match 'search' => 'events#index', :via => [:get, :post], :as => :search
+    end
+  end
 
-  resources :mentors
+  resources :mentors do 
+    collection do
+      match 'search' => 'mentors#index', :via => [:get, :post], :as => :search
+    end
+  end
 
   resources :mentor_regs do
     member do
