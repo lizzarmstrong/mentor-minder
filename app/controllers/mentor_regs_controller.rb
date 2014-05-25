@@ -22,8 +22,8 @@ class MentorRegsController < ApplicationController
 
 	def create
 		events = params[:event_ids]
-		mentor_reg = MentorReg.create(mentor_reg_params)
-		if mentor_reg && save_events(mentor_reg.id, events)
+		mentor_reg = MentorReg.new(mentor_reg_params)
+		if mentor_reg.save && save_events(mentor_reg.id, events)
 			redirect_to thanks_mentor_regs_path, notice: "Application was successful"
 		else
 			redirect_to thanks_mentor_regs_path, notice: "Application Failed"
@@ -67,6 +67,8 @@ class MentorRegsController < ApplicationController
 	end
 
 	def save_events(id, events)
+	    return true unless events
+
 		events.each do |event|
 			SignUp.where(event_id: event).where(signupable_type: "MentorReg").where(signupable_id: id).first_or_create
 		end

@@ -44,8 +44,10 @@ class MentorsController < ApplicationController
   # PATCH/PUT /mentors/1.json
   def update
     events = params[:event_ids]
-    events.each do |event|
-      Mentor.find(params[:id]).sign_ups.where(event_id: event).first_or_create
+    if events
+      events.each do |event|
+        Mentor.find(params[:id]).sign_ups.where(event_id: event).first_or_create
+      end
     end
  
     respond_to do |format|
