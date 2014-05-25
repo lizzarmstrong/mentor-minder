@@ -44,9 +44,9 @@ class MentorsController < ApplicationController
   def update
     events = params[:event_ids]
     events.each do |event|
-      signup = SignUp.where(event_id: event).where(signupable_type: "Mentor").where(signupable_id: params[:id]).first_or_create
+      Mentor.find(params[:id]).sign_ups.where(event_id: event).first_or_create
     end
-
+ 
     respond_to do |format|
       if @mentor.update(mentor_params)
         format.html { redirect_to @mentor, notice: 'Mentor was successfully updated.' }
