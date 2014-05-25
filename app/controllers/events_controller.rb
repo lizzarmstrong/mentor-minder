@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def index
     @q = Event.search(params[:q])
     @events = @q.result(distinct: true)
+    @events = Event.all.paginate(page: params[:page], per_page:5)
   end
 
   # GET /events/1

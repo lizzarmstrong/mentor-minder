@@ -16,9 +16,9 @@
 html {
 	/*background: transparent url(/assets/background.jpg) no-repeat center center fixed;*/
 	/*background-size: cover;*/
-	/*background: transparent url(/assets/background.png) center center fixed;*/
-	background-color: #333;
-}
+	background: transparent url(/assets/logo-small.png);
+/*	background-color: #333;
+*/}
 
 body {
 	margin-top: 0 !important;
@@ -30,7 +30,15 @@ body {
 	font-weight: 100;
 	text-transform: uppercase;
 	margin:0 auto;
-	background-color: #DDD;
+	background-color: #48D1CC;
+	position: fixed;
+	z-index: 9999;
+	border-bottom: 1px solid #333;
+}
+
+.logoNav {
+	margin: 0 20px;
+	width: 42px;
 }
 
 .customForm {
@@ -52,20 +60,39 @@ body {
 	width: 100px;
 }
 
-.homeTable {
-	background-color: rgb(102,205,170);
-	padding: 40px !important;
+table {
+	border: none !important;
 }
 
-th, td {
-    padding: 20px !important;
-    border-top: 3px solid #FFF !important;
+th, td, thead {
+    padding: 10px 0 10px 0 !important;
+    border-bottom: 3px solid #FFF !important;
+    vertical-align: middle !important;
+}
+
+.btn {
+	font-family: helvetica, arial, sans-serif !important;
+	font-size: 16px !important;
+	font-weight: 100 !important;
+}
+
+.addNew {
+	margin-left: 20px;
+}
+
+.search {
+	font-size: 16px !important;
+	width: 250px !important;
+	height: 100% !important;
 }
 
 .container {
 	background-color: #FFF;
 	width: 100% !important;
 	padding: 30px !important;
+	margin-top: 29px;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
 }
 
 .col-md-4 .col-md-8 {
@@ -77,15 +104,14 @@ th, td {
 	margin-bottom: 25px;
 	padding: 40px;
 	text-align: center;
-	color: #FFF;
+	color: #333;
 	text-transform: uppercase;
 	border-radius: 10px;
+	background-color: #DDD;
 }
-
 
 .dashboardTitle {
 	font-size: 24px;
-	font-weight: bold;  
 }
 
 .dashboardCount {
@@ -94,60 +120,49 @@ th, td {
 }
 
 .dashboardBox li {
-	font-size: 20px;
+	font-size: 18px;
 	list-style: none;
 }
 
-img {
+.dashboardImage {
 	margin-right: 10px !important;
 }
 
 .monitor {
 	background: url(monitor.png) no-repeat center;
 	height: 344px;
+	background-color: #DDD;
 }
 
 .glyphicon {
 	margin-right: 15px !important;
 }
 
-.turquoise {
-	background-color: #48D1CC;
+.pink {
+	background-color: #FA8072;
 }
 
-.rosybrown {
-	background-color: #BC8F8F;
+.lightBlue {
+	background-color: #5bc0de;
 }
 
-.peachpuff { 
-	background-color: #FFDAB9;
+.blue {
+	background-color: #428bca;
 }
 
-.steelblue { 
-	background-color: #4682B4;
+.red {
+	background-color: #d9534f;
 }
 
-.plum { 
-	background-color: #DDA0DD;
+.green {
+	background-color: #5cb85c;
 }
 
-.mediumseagreen { 
-	background-color: #3CB371;
+.orange {
+	background-color: #f0ad4e;
 }
 
-.lightsalmon { 
-	background-color: #FFA07A;
-}
-
-.lightslategray { 
-	background-color: #778899;
-}
-
-.lightcoral { 
-	background-color: #F08080;
-}
-
-.darkgray {
-	background-color: #A9A9A9
+.gold {
+	background-color: #FFD700;
 }
 

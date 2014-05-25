@@ -1,9 +1,11 @@
 	<% if user_signed_in? %>
 		<ul class="nav nav-pills nav-justified customNav">
+			<img class="logoNav pull-left" src="assets/logonav.png">
 		 	<li><a href="/"><span class="glyphicon glyphicon-home"></span> Home </a></li>
 			<li><a href="/mentors"><span class="glyphicon glyphicon-user"></span> Mentors </a></li>
 			<li><a href="/events"><span class="glyphicon glyphicon-calendar"></span> Events </a></li>
 			<li><a href="/mentor_regs"><span class="glyphicon glyphicon-refresh"></span> Pending Apps </a></li>
+			<li><a href="/"><span class="glyphicon glyphicon-wrench"></span> Admin Panel </a></li>
 			<li><%= link_to  "Sign Out", destroy_user_session_path, method: :delete %></li>
 		</ul>
 	<% end %>

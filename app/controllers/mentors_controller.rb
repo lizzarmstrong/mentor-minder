@@ -6,6 +6,7 @@ class MentorsController < ApplicationController
   def index
     @q = Mentor.search(params[:q])
     @mentors = @q.result(distinct: true)
+    @mentors = Mentor.all.paginate(page: params[:page], per_page:5)
   end
 
   # GET /mentors/1

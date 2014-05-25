@@ -1,13 +1,16 @@
-<%= search_form_for @q do |f| %>
-  <%= f.label :topic_cont %>
-  <%= f.search_field :topic_cont %>
-  <%= f.submit %>
-<% end %>
 
-<button type="button" class="btn btn-default pull-right"><%= link_to 'New Event', new_event_path %></button>
+<h1>Events <button type="button" class="btn btn-success addNew"><%= link_to 'Add New', new_event_path %></button> </h1>
 
-<h1>Events</h1>
+<form class="form-inline" role="form">
+  <div class="form-group pull-right">
+    <%= search_form_for @q do |f| %>
+      <%= f.search_field :topic_cont, :placeholder => "Topic", class: "form-control search" %>
+      <%= f.submit class: "btn btn-default" %>
+    <% end %>
+  </div>
+</form>
 
+<br>
 <br>
 
 <table class="table homeTable">
@@ -27,13 +30,13 @@
         <td><%= event.age_group %></td>
         <td><%= event.topic %></td>
         <td><%= event.event_date %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button type="button" class="btn btn-info pull-right"><%= link_to 'Profile', event %></button></td>
+        <td><button type="button" class="btn btn-warning pull-right"><%= link_to 'Edit', edit_event_path(event) %></button></td>
+        <td><button type="button" class="btn btn-danger pull-right"><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= will_paginate @events %>
 
