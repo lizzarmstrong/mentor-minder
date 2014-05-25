@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521001410) do
+ActiveRecord::Schema.define(version: 20140525174948) do
 
   create_table "events", force: true do |t|
     t.string   "category"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140521001410) do
     t.string   "emergency_contact"
     t.text     "references"
     t.boolean  "permission_to_contact_references"
+    t.integer  "events_count",                     default: 0
   end
 
   create_table "mentors", force: true do |t|
@@ -52,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140521001410) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "last_name"
-    t.integer  "events_count",                     default: 0
+    t.integer  "events_count",                     default: 0,     null: false
     t.boolean  "first_aid_certified",              default: false
     t.string   "phone"
     t.string   "city"
