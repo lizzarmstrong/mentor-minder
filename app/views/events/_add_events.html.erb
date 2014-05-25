@@ -1,4 +1,4 @@
 <% Event.upcoming.each do |event| %>
-	<%= check_box_tag 'event_ids', event.id %>
-	<%= event.topic %><br>
+	<%= check_box_tag 'event_ids[]', event.id %>
+	<%= "#{event.topic} - #{event.event_date}" %><br>
 <% end %>

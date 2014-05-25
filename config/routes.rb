@@ -1,5 +1,9 @@
 Mentorminder::Application.routes.draw do
-  devise_for :users
+  devise_for :users,
+              controllers: {registrations: "my_devise/registrations"}
+  # scope '/admin' do
+  #   resources :users
+  # end
   
   resources :events do
     collection do
