@@ -30,11 +30,11 @@ class MentorRegsController < ApplicationController
 
 	def create
 		events = params[:event_ids]
-		mentor_reg = MentorReg.new(mentor_reg_params)
-		if mentor_reg.save && save_events(mentor_reg.id, events)
+		@mentor_reg = MentorReg.new(mentor_reg_params)
+		if @mentor_reg.save && save_events(@mentor_reg.id, events)
 			redirect_to thanks_mentor_regs_path, notice: "Application was successful"
 		else
-			redirect_to thanks_mentor_regs_path, notice: "Application Failed"
+			render action: 'new'
 		end
 	end
 
