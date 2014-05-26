@@ -11,15 +11,28 @@
     </div>
   <% end %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username, :class => 'form-control' %>
+      </div>
 
-  <div><%= f.label :username %><br />
-    <%= f.text_field :username %></div>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, :class => 'form-control'%>
+      </div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password %></div>
+      <br>
 
-  <div><%= f.submit "Submit" %></div>
+      <div class="actions">
+        <%= f.submit "Submit", :class => 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
 
 <% end %>
