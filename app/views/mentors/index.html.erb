@@ -1,4 +1,4 @@
-<h1>Mentors <button type="button" class="btn btn-success addNew"><%= link_to 'Add New', new_mentor_path %></button></h1>
+<h1>Mentors <%= link_to 'Add New', new_mentor_path, :class => 'btn btn-success headerButton' %> </h1>
 
 <form class="form-inline" role="form">
   <div class="form-group pull-right">
@@ -16,7 +16,6 @@
   <thead>
       <th><%= sort_link @q, :first_name, "First Name" %></th>
       <th><%= sort_link @q, :last_name, "Last Name" %></th>
-      <th><%= sort_link @q, :gender, "Gender" %></th>
       <th><%= sort_link @q, :email, "Email" %></th>
       <th><%= sort_link @q, :first_aid_certified, "First Aid Certified?" %></th>
   </thead>
@@ -26,16 +25,15 @@
       <tr>
         <td><%= link_to mentor.first_name, mentor %></td>
         <td><%= link_to mentor.last_name, mentor %></td>
-        <td><%= mentor.gender %></td>
         <td><%= mentor.email %></td>
         <td><%= mentor.first_aid_certified %></td>
         
-        <td><button type="button" class="btn btn-info pull-right">
-<%= link_to 'Profile', mentor %></button></td>
-        <td><button type="button" class="btn btn-warning pull-right">
-<%= link_to 'Edit', edit_mentor_path(mentor) %></button></td>
-        <td><button type="button" class="btn btn-danger pull-right">
-<%= link_to 'Delete', mentor, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td>
+<%= link_to 'Profile', mentor, :class => 'btn btn-info pull-right' %></td>
+        <td>
+<%= link_to 'Edit', edit_mentor_path(mentor), :class => 'btn btn-warning pull-right' %></td>
+        <td>
+<%= link_to 'Delete', mentor, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger pull-right' %></td>
       </tr>
     <% end %>
   </tbody>

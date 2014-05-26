@@ -73,9 +73,15 @@ th, td, thead {
 	font-family: helvetica, arial, sans-serif !important;
 	font-size: 16px !important;
 	font-weight: 100 !important;
+	color: #333 !important;
 }
 
-.addNew {
+.form-control {
+	font-size: 16px !important;
+	height: 40px !important;
+}
+
+.headerButton {
 	margin-left: 20px;
 }
 
@@ -103,7 +109,6 @@ th, td, thead {
 	margin-bottom: 25px;
 	padding: 40px;
 	text-align: center;
-	color: #333;
 	text-transform: uppercase;
 	border-radius: 10px;
 	background-color: #DDD;
@@ -163,5 +168,15 @@ th, td, thead {
 
 .gold {
 	background-color: #FFD700;
+}
+
+
+select {
+    padding:20px;
+    margin: 0;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    display: inline-block;
+    height: 37px;
 }
 

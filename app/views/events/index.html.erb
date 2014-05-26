@@ -1,5 +1,4 @@
-
-<h1>Events <button type="button" class="btn btn-success addNew"><%= link_to 'Add New', new_event_path %></button> </h1>
+<h1>Events <%= link_to 'Add New', new_event_path, :class => 'btn btn-success headerButton' %> </h1>
 
 <form class="form-inline" role="form">
   <div class="form-group pull-right">
@@ -30,9 +29,9 @@
         <td><%= event.age_group %></td>
         <td><%= event.topic %></td>
         <td><%= event.event_date %></td>
-        <td><button type="button" class="btn btn-info pull-right"><%= link_to 'Profile', event %></button></td>
-        <td><button type="button" class="btn btn-warning pull-right"><%= link_to 'Edit', edit_event_path(event) %></button></td>
-        <td><button type="button" class="btn btn-danger pull-right"><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td><%= link_to 'Profile', event, :class => "btn btn-info pull-right" %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), :class => "btn btn-warning pull-right" %></td>
+        <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger pull-right' %></td>
       </tr>
     <% end %>
   </tbody>

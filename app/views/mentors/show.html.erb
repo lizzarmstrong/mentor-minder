@@ -1,7 +1,6 @@
-<h1> <%= @mentor.first_name %> <%= @mentor.last_name %> </h1>
-<br>
+<h1> <%= @mentor.first_name %> <%= @mentor.last_name %> <%= link_to 'Edit', edit_mentor_path(@mentor), :class => 'btn btn-warning headerButton' %> </h1>
 
-<p id="notice"><%= notice %></p>
+<br>
 
 <p>
   <strong>First Name:</strong>
@@ -24,28 +23,89 @@
 </p>
 
 <p>
+  <strong>Phone:</strong>
+  <%= @mentor.phone %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @mentor.city %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @mentor.website %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @mentor.twitter %>
+</p>
+
+<p>
+  <strong>LinkedIn:</strong>
+  <%= @mentor.linkedin %>
+</p>
+
+<p>
+  <strong>Work:</strong>
+  <%= @mentor.work %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @mentor.job %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @mentor.bio %>
+</p>
+
+<p>
+  <strong>Why Involved:</strong>
+  <%= @mentor.why_involved %>
+</p>
+
+<p>
+  <strong>Emergency Contact:</strong>
+  <%= @mentor.emergency_contact %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @mentor.references %>
+</p>
+
+<p>
+  <strong>Permission to contact references:</strong>
+  <%= @mentor.permission_to_contact_references %>
+</p>
+
+<p>
   <strong>First Aid Certified:</strong>
   <%= @mentor.first_aid_certified %>
 </p>
 
-<%= link_to 'Edit', edit_mentor_path(@mentor) %> |
-<%= link_to 'Back', mentors_path %>
+<br>
+<br>
 
-<br><br>
 <table class="table">
 	<thead>
 		<tr>
-			<th>Topic</th>
 			<th>Category</th>
 			<th>Age Group</th>
+			<th>Topic</th>
+      <th>Event Date</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @mentor.events.each do |event| %>
 			<tr>
+        <td><%= event.category %></td>
+        <td><%= event.age_group %></td>
 				<td><%= event.topic %></td>
-				<td><%= event.category %></td>
-				<td><%= event.age_group %></td>
+        <td><%= event.event_date %></td>
 			</tr>
 		<% end %>
 	</tbody>
