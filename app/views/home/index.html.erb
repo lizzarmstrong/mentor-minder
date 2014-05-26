@@ -1,14 +1,16 @@
 <div class="row">
 
   <div class="col-md-4">
-    <div class="dashboardBox">
-      <h1> <strong> Hello, <%= current_user.username %>! </strong> </h1>
+    <div class="dashboardBox dashboardHello">
+      <h1 class = "removeMargin">Hello,</h1>
+      <p class="dashboardTitle"> 
+        <%= current_user.username %>! </p>
     </div>
 
-    <div class="dashboardBox">
+    <div class="dashboardBox dashboardHello">
       <p class="dashboardTitle green">Last event:</p>
       <li>
-        <img src="assets/calendar.png">
+        <img class="dashboardImage" src="assets/calendar.png">
         <% Event.most_recent.order('event_date DESC').limit(1).each do |event| %>
           <%= link_to event.topic, event %>
         <% end %>
@@ -28,11 +30,11 @@
   </div>
 
   <div class="col-md-4">
-    <div class="dashboardBox">
+    <div class="dashboardBox dashboardHello">
       <a href="https://bufferapp.com/"><img class="dashboardImage" src="assets/buffer.png"></a><a href="https://twitter.com/llcodedotcom"><img class="dashboardImage" src="assets/twitter.png"></a><a href="https://www.facebook.com/ladieslearningcode"><img class="dashboardImage" src="assets/facebook.png"></a>
     </div>
 
-    <div class="dashboardBox">
+    <div class="dashboardBox dashboardHello">
       <a href="https://basecamp.com/"><img class="dashboardImage" src="assets/basecamp.png"></a><a href="http://learninglabs.org/wp-admin/"><img class="dashboardImage" src="assets/wordpress.png"></a><a href="http://mailchimp.com/"><img class="dashboardImage" src="assets/mailchimp.png"></a><a href="https://www.eventbrite.ca/"><img class="dashboardImage" src="assets/eventbrite.png"></a>
       <br>
       <br>
@@ -49,7 +51,7 @@
 
     <div class="dashboardBox">
       <p class="dashboardTitle pink">Female Mentors:</p> 
-       <p class="dashboardCount"><img src="assets/female.png"><%= Mentor.gendered('Female').count %></p>
+       <p class="dashboardCount"><img class="mentorImage" src="assets/female.png"><%= Mentor.gendered('Female').count %></p>
     </div>
   </div>
 
@@ -61,7 +63,7 @@
 
     <div class="dashboardBox">
       <p class="dashboardTitle lightBlue">Male Mentors:</p> 
-      <p class="dashboardCount"><img src="assets/male.png"><%= Mentor.gendered('Male').count %></p>
+      <p class="dashboardCount"><img class="mentorImage" src="assets/male.png"><%= Mentor.gendered('Male').count %></p>
     </div>
   </div>
 
