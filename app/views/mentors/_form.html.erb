@@ -11,82 +11,90 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, ([["Select One", ""], "Female", "Male"]), :class => 'genForm_dropBox' %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter %><br>
-    <%= f.text_field :twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :linkedin %><br>
-    <%= f.text_field :linkedin %>
-  </div>
-  <div class="field">
-    <%= f.label :work %>
-    <%= f.text_field :work %>
-  </div>
-  <div class="field">
-    <%= f.label :job %>
-    <%= f.text_field :job %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :why_involved %>
-    <%= f.text_area :why_involved %>
-  </div>
-  <div class="field">
-    <%= f.label :emergency_contact %>
-    <%= f.text_field :emergency_contact %>
-  </div>
-  <div class="field">
-    <%= f.label :first_aid_certified %>
-    <%= f.check_box :first_aid_certified %>
-  </div>
-  <div class="field">
-    <%= f.label :references %>
-    <%= f.text_area :references %>
-  </div>
-  <div class="field">
-    <%= f.label :permission_to_contact_references %>
-    <%= f.check_box :permission_to_contact_references %>
-  </div>
-  <div>
-  <% Event.upcoming.each do |event| %>
-    <%= check_box_tag 'event_ids[]', event.id %>
-    <%= event.topic %><br>
-  <% end %>
-</div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="field">
+        <%= f.label :first_name %><br>
+          <%= f.text_field :first_name, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :gender %><br>
+        <%= f.select :gender, ([["Select One", ""], "Female", "Male"]) %>
+      </div>
+      <div class="field">
+        <%= f.label :phone %><br>
+        <%= f.text_field :phone, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :website %><br>
+        <%= f.text_field :website, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :twitter %><br>
+        <%= f.text_field :twitter, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :linkedin %><br>
+        <%= f.text_field :linkedin, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :work %><br>
+        <%= f.text_field :work, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :job %><br>
+        <%= f.text_field :job, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :bio %><br>
+        <%= f.text_area :bio, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :why_involved %><br>
+        <%= f.text_area :why_involved, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :emergency_contact %><br>
+        <%= f.text_field :emergency_contact, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :references %><br>
+        <%= f.text_area :references, :class => 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.check_box :permission_to_contact_references %>
+        <%= f.label :permission_to_contact_references %>
+      </div>
+      <div class="field">
+        <%= f.check_box :first_aid_certified %>
+        <%= f.label :first_aid_certified %>
+      </div>
+      <div>
+        <% Event.upcoming.each do |event| %>
+          <%= check_box_tag 'event_ids[]', event.id %>
+          <%= event.topic %><br>
+        <% end %>
+      </div>
 
+      <br>
+
+      <div class="actions">
+        <%= f.submit :class => 'btn btn-success' %> 
+    </div>
+  </div>
 <% end %>
+
+
+

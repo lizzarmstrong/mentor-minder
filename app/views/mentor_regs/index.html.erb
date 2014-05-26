@@ -20,8 +20,12 @@
         <td><%= reg.first_name %></td>
         <td><%= reg.last_name %></td>
         <td><%= reg.email %></td>
-        <td><%= link_to "Process", process_reg_mentor_reg_path(reg), method: :post %></td>
-        <td><%= link_to 'Destroy', reg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to "Process", process_reg_mentor_reg_path(reg), method: :post, :class => 'btn btn-success pull-right' %></td>
+        
+        <td><%= link_to 'Edit', edit_mentor_reg_path(reg), :class => 'btn btn-warning pull-right' %></td>
+
+        <td><%= link_to 'Delete', reg, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger pull-right' %></td>
       </tr>
     <% end %>
   </tbody>

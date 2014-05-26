@@ -1,10 +1,18 @@
 class MentorRegsController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:new, :create, :thanks]
-	before_action :set_mentor_reg, only: [:destroy]
+	before_action :set_mentor_reg, only: [:edit, :destroy]
 
 	def index
 		@mentor_regs = MentorReg.all
 	end	
+
+	def edit
+
+	end
+
+	def show
+		
+  	end
 
 	def process_reg
 		if RegConverter.process_reg(params[:id])
