@@ -31,7 +31,7 @@ class Admin::UsersController < ApplicationController
     		params[:user].delete(:password)
     		params[:user].delete(:password_confirmation)
 		end
-		
+
 		if @user.update(user_params) 
 			flash[:notice] = "Update successful"
 		else 
@@ -41,6 +41,12 @@ class Admin::UsersController < ApplicationController
 	end
 
 	def destroy
+		if @user.destroy
+			flash[:notice] = "User deleted"
+		else
+			flash[:notice] = "User destroy failed"
+		end
+		redirect_to admin_users_path
 
 	end
 
