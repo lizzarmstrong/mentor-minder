@@ -1,10 +1,18 @@
 Mentorminder::Application.routes.draw do
+
+  
   devise_for :users,
               controllers: {registrations: "my_devise/registrations"}
   # scope '/admin' do
   #   resources :users
   # end
-  
+
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    resources :users
+
+  end
+
   resources :events do
     collection do
       match 'search' => 'events#index', :via => [:get, :post], :as => :search
