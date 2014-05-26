@@ -81,12 +81,10 @@
         <%= f.check_box :first_aid_certified %>
         <%= f.label :first_aid_certified %>
       </div>
-      <div>
-        <% Event.upcoming.each do |event| %>
-          <%= check_box_tag 'event_ids[]', event.id %>
-          <%= event.topic %><br>
-        <% end %>
-      </div>
+
+      <br>
+  
+      <%= render 'events/add_events' %>
 
       <br>
 
