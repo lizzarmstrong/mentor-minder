@@ -3,12 +3,15 @@ Mentorminder::Application.routes.draw do
   
   devise_for :users,
               controllers: {registrations: "my_devise/registrations"}
-  # scope '/admin' do
-  #   resources :users
-  # end
+  as :user do
+    get 'users/edit' => 'my_devise/registrations#edit', :as => 'edit_user_registration'
+    put 'users' => 'my_devise/registrations#update', :as => 'user_registration'
+  end
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+    get '/profile/edit', to: 'dashboard#user_profile_edit'
+    put 'profile/edit', to: 'dashboard#user_profile_update'
     resources :users
 
   end
