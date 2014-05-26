@@ -105,6 +105,10 @@ th, td, thead {
 	margin: 0 !important;
 }
 
+.dashboardHello {
+	height: 159px;
+}
+
 .dashboardBox {
 	margin-bottom: 25px;
 	padding: 40px;
@@ -129,7 +133,16 @@ th, td, thead {
 }
 
 .dashboardImage {
-	margin-right: 10px !important;
+	margin-right: 15px !important;
+}
+
+.mentorImage {
+	margin-right: 20px !important;
+}
+
+.removeMargin {
+	margin: 0;
+	line-height: 1.4
 }
 
 .monitor {
